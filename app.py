@@ -29,8 +29,8 @@ def result():
         return render_template("index.html",form=form)
     elif request.method == "POST":
         data=dict(request.form)
-        stime = datetime.strptime(data["start_time"][0], '%Y-%m-%dT%H:%M:%SZ')
-        etime = datetime.strptime(data["end_time"][0], '%Y-%m-%dT%H:%M:%SZ')
+        stime = datetime.strptime(data["start_time"], '%Y-%m-%dT%H:%M:%SZ')
+        etime = datetime.strptime(data["end_time"], '%Y-%m-%dT%H:%M:%SZ')
         shifts = { 
             'shiftA': {'production_A_count': 0,'production_B_count': 0},
             'shiftB': {'production_A_count': 0,'production_B_count': 0},
@@ -64,8 +64,8 @@ def result1():
         return render_template("index1.html",form=form)
     elif request.method == "POST":
         data=dict(request.form)
-        stime = datetime.strptime(data["start_time"][0], '%Y-%m-%dT%H:%M:%SZ')
-        etime = datetime.strptime(data["end_time"][0], '%Y-%m-%dT%H:%M:%SZ')
+        stime = datetime.strptime(data["start_time"], '%Y-%m-%dT%H:%M:%SZ')
+        etime = datetime.strptime(data["end_time"], '%Y-%m-%dT%H:%M:%SZ')
         alltime ={
             'runtime' : 0,
 	        'downtime': 0,
@@ -97,8 +97,8 @@ def result2():
         return render_template("index2.html",form=form)
     elif request.method == "POST":
         data=dict(request.form)
-        stime = datetime.strptime(data["start_time"][0], '%Y-%m-%dT%H:%M:%SZ')
-        etime = datetime.strptime(data["end_time"][0], '%Y-%m-%dT%H:%M:%SZ')
+        stime = datetime.strptime(data["start_time"], '%Y-%m-%dT%H:%M:%SZ')
+        etime = datetime.strptime(data["end_time"], '%Y-%m-%dT%H:%M:%SZ')
         sums={}
         with open('./shared/sample_json_3.json') as f:
             j=json.load(f)
